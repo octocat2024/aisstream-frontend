@@ -1,0 +1,7 @@
+services:
+  ais-frontend:
+    build: .
+    ports:
+      - "80:80"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod

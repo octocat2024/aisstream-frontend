@@ -1,0 +1,74 @@
+.mapview-container {
+  width: min(100%, 960px);
+  margin: 24px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mapview-header {
+  text-align: left;
+}
+
+.mapview-header h1 {
+  margin-bottom: 8px;
+}
+
+.mapview-content {
+  min-height: 420px;
+}
+
+.mapview-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mapview-controls button {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: #ef4444;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.mapview-controls button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.mapview-error {
+  margin: 0;
+  color: #b91c1c;
+}
+
+.map-canvas {
+  height: 420px;
+  border: 1px solid #2e303a;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.leaflet-map {
+  height: 100%;
+  width: 100%;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  font-family: inherit;
+}
+
+@media (max-width: 768px) {
+  .mapview-container {
+    margin: 16px auto;
+  }
+
+  .map-canvas {
+    height: 360px;
+  }
+}

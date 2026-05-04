@@ -1,0 +1,22 @@
+{
+  "name": "React Devcontainer",
+  "image": "node:25-bookworm",
+  "workspaceFolder": "/workspaces/frontend",
+  "runArgs": [
+      "--memory=2g",
+      "--cpus=2",
+      "--network=host"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+  "containerEnv": {
+    "DOTNET_USE_POLLING_FILE_WATCHER": "1"
+  },
+  "postCreateCommand": "npm install leaflet react-leaflet"
+}

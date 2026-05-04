@@ -1,0 +1,63 @@
+.data-flow {
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 16px 0;
+}
+
+.flow-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #1e2a35;
+  border: 2px solid #2a3f50;
+  color: #7ecfcf;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  z-index: 1;
+}
+
+.flow-track {
+  width: 100px;
+  flex: 1;
+  height: 2px;
+  background: #2a3f50;
+  position: relative;
+  overflow: visible;
+}
+
+.flow-line {
+  position: absolute;
+  inset: 0;
+  background: #2a3f50;
+  transition: background 0.3s;
+}
+
+.flow-line.active {
+  background: #3dd6d6;
+  box-shadow: 0 0 8px #3dd6d6;
+}
+
+.flow-dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 10px #3dd6d6, 0 0 20px #3dd6d6;
+  top: -6px;
+  left: -14px;
+  animation: flow-move 2s ease-in infinite;
+}
+
+@keyframes flow-move {
+  0%   { left: -14px; }
+  100% { left: calc(100% + 14px); }
+}
