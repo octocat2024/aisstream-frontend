@@ -9,7 +9,7 @@ export function startShipHub(
   const baseUrl = import.meta.env.VITE_API_BASE_URL || 'https://bramcloud.nl'
 
   connection = new HubConnectionBuilder()
-    .withUrl(`${baseUrl}/hubs/ships`)
+    .withUrl(`${baseUrl}/hubs/ships`, { withCredentials: false }) // fix later with cred
     .withAutomaticReconnect()
     .build();
 
