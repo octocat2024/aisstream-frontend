@@ -1,7 +1,6 @@
 import './DataFlowIndicator.css'
 
-export default function DataFlowIndicator({ active, pulse }: { active: boolean; pulse: number }) {
-  return (
+export default function DataFlowIndicator({ active }: { active: boolean; pulse?: number }) {  return (
     <div className="data-flow">
       <div className="flow-node">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="22" height="22">
