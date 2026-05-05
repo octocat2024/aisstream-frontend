@@ -51,3 +51,6 @@ jobs:
                   tags: |
                     ${{ secrets.DOCKER_USERNAME }}/aisstream-frontend:${{ github.run_number }}
                     ${{ secrets.DOCKER_USERNAME }}/aisstream-frontend:latest
+            - name: Trigger render webhook
+              run: |
+                curl https://api.render.com/deploy/srv-d7i85t1j2pic73algrkg?key=${{ secrets.RENDER_WEBHOOK_KEY }}
