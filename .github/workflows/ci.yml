@@ -48,6 +48,4 @@ jobs:
                   context: gps-project
                   file: gps-project/Dockerfile
                   push: true
-                  tags: |
-                    ${{ secrets.DOCKER_USERNAME }}/aisstream-frontend:${{ github.run_number }}
-                    ${{ secrets.DOCKER_USERNAME }}/aisstream-frontend:latest
+                  tags: ${{ secrets.DOCKER_USERNAME }}/aisstream-frontend:${{ github.run_number }}
