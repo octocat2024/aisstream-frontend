@@ -6,12 +6,12 @@ let connection: HubConnection | null = null;
 export function startShipHub(
   onShipReceived: (ship: Ship) => void
 ) {
-  if (!connection) {
-    connection = new HubConnectionBuilder()
-      .withUrl('/hubs/ships')
-      .withAutomaticReconnect()
-      .build();
-  }
+  const baseUrl = import.meta.env.VITE_API_BASE_URL || 'https://bramcloud.nl'
+
+  connection = new HubConnectionBuilder()
+    .withUrl(`${baseUrl}/hubs/ships`)
+    .withAutomaticReconnect()
+    .build();
 
   connection.on('ShipInfoUpdated', (data: string) => {
     const ship: Ship = JSON.parse(data);
