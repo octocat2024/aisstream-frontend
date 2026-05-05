@@ -6,7 +6,8 @@ export type GpsPoint = {
 
 export async function fetchGpsPoints(): Promise<GpsPoint[]> {
     console.log('requesting gps data')
-    const response =  await fetch(`${import.meta.env.VITE_API_BASE_URL}/AisInfo/Ship`)
+    const baseUrl = import.meta.env.VITE_API_BASE_URL || 'https://bramcloud.nl'
+    const response =  await fetch(`${baseUrl}/AisInfo/Ship`)
     if (!response.ok) {
         throw new Error('Failed to fetch GPS points')
     }
